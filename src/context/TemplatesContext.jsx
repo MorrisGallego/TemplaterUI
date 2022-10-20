@@ -2,7 +2,7 @@ import {createContext, useEffect, useState} from 'react'
 
 const TemplatesContext = createContext({})
 
-const BASE_PATH = 'http://localhost:8080'
+let BASE_PATH = window.BASE_PATH
 
 function TemplatesConnector({children}) {
     const [templates, setTemplates] = useState([])
