@@ -9,7 +9,7 @@ function Preview() {
         <figcaption className = 'bg-slate-900 px-4 py-2 font-semibold text-sm text-slate-100'>
             Template preview
         </figcaption>
-        <picture className ='p-4 bg-slate-400 shadow-inner shadow-slate-600'>
+        <picture className ='p-4 bg-slate-400 shadow-inner shadow-slate-600 flex-1'>
             <img alt = 'Template preview' className = 'w-full' src = {preview}/>
         </picture>
     </figure>
