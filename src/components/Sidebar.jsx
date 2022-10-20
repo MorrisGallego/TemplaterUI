@@ -8,15 +8,15 @@ function Sidebar() {
     const { templates, template, selectTemplate, deleteTemplate, uploadTemplate } = useContext(TemplatesContext)
 
     return <aside className = 'col-span-2 bg-slate-900 text-slate-100 flex flex-col justify-between shadow shadow-slate-600'>
-        <ul className = 'flex flex-col'>
+        <ul className = 'flex flex-col w-full'>
             {
                 templates?.map(currentTemplate =>
-                    <li className = {`${template.name === currentTemplate ? 'bg-slate-800' : ''} flex items-center overflow-hidden h-12 group hover:bg-slate-700`} key = {currentTemplate}>
-                        <button className = 'text-left flex-1 px-4 h-full flex items-center' onClick = { () => selectTemplate(currentTemplate) }>
+                    <li className = {`${template.name === currentTemplate ? 'bg-slate-800' : ''} h-12 group hover:bg-slate-700 overflow-hidden relative`} key = {currentTemplate}>
+                        <button className = 'px-4 w-full h-full flex items-center justify-start whitespace-nowrap overflow-hidden overflow-ellipsis' onClick = { () => selectTemplate(currentTemplate) }>
                             <DocumentTextIcon className = 'h-5 mr-2'/>
                             {currentTemplate}
                         </button>
-                        <button className = 'transition-transform translate-x-full bg-red-600 px-4 shadow-inner shadow-red-900 h-full group-hover:translate-x-0 hover:bg-red-700'
+                        <button className = 'absolute top-0 right-0 transition-transform translate-x-full bg-red-600 px-4 shadow-inner shadow-red-900 h-full group-hover:translate-x-0 hover:bg-red-700'
                                 onClick = { () => deleteTemplate(currentTemplate) }
                         >
                             <ArchiveBoxXMarkIcon className = 'h-5' />
